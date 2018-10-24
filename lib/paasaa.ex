@@ -92,10 +92,10 @@ defmodule Paasaa do
       iex> Paasaa.all("Detect this!") |> Enum.take(5)
       [
         {"eng", 1.0},
-        {"sco", 0.8668304668304668},
-        {"nob", 0.6054054054054054},
-        {"swe", 0.5921375921375922},
-        {"nno", 0.5518427518427518}
+        {"sco", 0.8438040345821326},
+        {"nob", 0.5371757925072046},
+        {"swe", 0.521613832853026},
+        {"nno", 0.4743515850144092}
       ]
   """
 
@@ -225,7 +225,7 @@ defmodule Paasaa do
   defp n_grams(str, n \\ 3) do
     str
     |> String.graphemes
-    |> Enum.chunk(n, 1)
+    |> Enum.chunk_every(n, 1)
     |> Enum.map(&Enum.join/1)
   end
 end
